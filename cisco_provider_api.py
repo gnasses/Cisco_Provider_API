@@ -1,15 +1,14 @@
-import time
+import os, time
 from flask import Flask, jsonify, g, url_for, request, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_httpauth import HTTPBasicAuth
 from netmiko import Netmiko
 from ntc_templates.parse import parse_output
 from werkzeug.security import generate_password_hash, check_password_hash
-
 import jwt
-import ciscocreds
+import ciscocreds, safe_commands
 
-valid = ['show version', 'show inventory', 'show hardware', 'show cdp neighbor', 'show cdp neighbor detail', 'show ip route', 'show ip route vrf all', 'show bgp summary']
+valid = safe_commands.valid
 
 # init
 app = Flask(__name__)
