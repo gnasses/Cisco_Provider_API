@@ -9,5 +9,5 @@ API to retrieve configuration information from Cisco IOS and NXOS devices
 
 ( GET  http://apvrp63353:5005/api/safecommand/ &lt;device>/&lt;command>  -- unauthenticated device show commands from approved list )
   
-( GET  http://apvrp63353:5005/api/command/ &lt;device>/&lt;<command>  -- required authentication, run any valid read-only command, may not enter config mode) 
+( GET  http://apvrp63353:5005/api/command/ &lt;device>/&lt;command>  -- required authentication, run any valid read-only command, may not enter config mode) 
   
