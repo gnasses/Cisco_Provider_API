@@ -11,3 +11,6 @@ API to retrieve configuration information from Cisco IOS and NXOS devices
   
 ( GET  http://apvrp63353:5005/api/command/ &lt;device>/&lt;command>  -- required authentication, run any valid read-only command, may not enter config mode) 
   
+
+**safe_commands.py**
+Python file imported by cisco_provider_api.py containing list of commands available via the safecommand API without authentication
