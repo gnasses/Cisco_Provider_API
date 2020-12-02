@@ -13,4 +13,5 @@ API to retrieve configuration information from Cisco IOS and NXOS devices
   
 
 **safe_commands.py**
+
 Python file imported by cisco_provider_api.py containing list of commands available via the safecommand API without authentication
