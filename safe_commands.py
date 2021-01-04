@@ -5,5 +5,6 @@ valid = ['show version',
 'show cdp neighbor detail', 
 'show ip route', 
 'show ip route vrf all', 
-'show bgp summary']
+'show bgp summary', 
+'show processes cpu']
 
