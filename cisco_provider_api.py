@@ -83,7 +83,7 @@ def cisco_connector(device):
         return dev_connect
     except Exception:
             try:
-                response = requests.request("GET", url, headers=headers, params=querystring, verify=False)
+                response = requests.request("GET", esm.url, headers=esm.headers, params=esm.querystring, verify=False)
                 rouser = response.json().get('UserName')
                 ropass = response.json().get('Content')               
                 net_device = CiscoISERO(host=device, username=rouser, password=ropass)
