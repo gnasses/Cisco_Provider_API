@@ -58,7 +58,7 @@ class CiscoDeviceRO:
         self.auth_timeout = auth_timeout 
         
 class CiscoISERO:
-    def __init__(self, host, username=ciscocreds.iserouser, password=ciscocreds.iseropass, device_type='cisco_ios', timeout=90, auth_timeout=90):
+    def __init__(self, host, username, password, device_type='cisco_ios', timeout=90, auth_timeout=90):
         self.host = host
         self.username = username
         self.password = password
@@ -83,7 +83,10 @@ def cisco_connector(device):
         return dev_connect
     except Exception:
             try:
-                net_device = CiscoISERO(host=device)
+                response = requests.request("GET", url, headers=headers, params=querystring, verify=False)
+                rouser = response.json().get('UserName')
+                ropass = response.json().get('Content')               
+                net_device = CiscoISERO(host=device, username=rouser, password=ropass)
                 dev_connect = Netmiko(**net_device.__dict__) 
                 return dev_connect
             except Exception:
