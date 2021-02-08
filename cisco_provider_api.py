@@ -1,4 +1,4 @@
-import os, time
+import os, time, requests
 from flask import Flask, jsonify, g, url_for, request, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_httpauth import HTTPBasicAuth
@@ -6,7 +6,7 @@ from netmiko import Netmiko
 from ntc_templates.parse import parse_output
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
-import ciscocreds, safe_commands
+import ciscocreds, safe_commands, esm
 
 valid = safe_commands.valid
 
