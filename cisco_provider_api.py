@@ -186,6 +186,7 @@ def get_resource():
 #Safecommand API restricted to exact command syntax in [valid] - no login required
 @app.route('/api/safecommand/<device>/<command>', methods=['POST', 'GET'])
 def cisco_api_command_safe(device, command):
+    r = requests.request("POST", "http://apvrp63353:5018/api/trigger/Cisco_Provider", verify=False)
     if command not in valid:
         raise ValueError("Unsupported Command: must be one of %r." %valid)    
     try:
@@ -211,6 +212,7 @@ def cisco_api_command_safe(device, command):
 @app.route('/api/command/<device>/<command>', methods=['POST', 'GET'])
 @auth.login_required
 def cisco_api_command(device, command): 
+    r = requests.request("POST", "http://apvrp63353:5018/api/trigger/Cisco_Provider", verify=False)
     try:
         dev_connect = cisco_connector(device)
     except Exception as e:
