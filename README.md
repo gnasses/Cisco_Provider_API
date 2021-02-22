@@ -1,7 +1,7 @@
 # Cisco_Provider_API
 API to retrieve configuration information from Cisco IOS and NXOS devices
 
-![image](https://github.optum.com/NS/Cisco_Provider_API/blob/master/Cisco_Provider_API.JPG?raw=true)
+![image](https://github.com/gnasses/Cisco_Provider_API/master/Cisco_Provider_API.JPG?raw=true)
 
 **cisco_provider_api.py**
 
