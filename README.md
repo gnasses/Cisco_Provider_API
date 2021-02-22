@@ -5,11 +5,11 @@ API to retrieve configuration information from Cisco IOS and NXOS devices
 
 **cisco_provider_api.py**
 
-( POST http://<servername>:5005/api/token -- pass username and password to generate token)
+( POST http://myserver.mydomain.com:5005/api/token -- pass username and password to generate token)
 
-( GET  http://<servername>:5005/api/safecommand/ &lt;device>/&lt;command>  -- unauthenticated device show commands from approved list )
+( GET  http://myserver.mydomain.com:5005/api/safecommand/ &lt;device>/&lt;command>  -- unauthenticated device show commands from approved list )
   
-( GET  http://<servername>:5005/api/command/ &lt;device>/&lt;command>  -- required authentication, run any valid read-only command, may not enter config mode) 
+( GET  http://myserver.mydomain.com:5005/api/command/ &lt;device>/&lt;command>  -- required authentication, run any valid read-only command, may not enter config mode) 
   
 
 **safe_commands.py**
